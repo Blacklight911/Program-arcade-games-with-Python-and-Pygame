@@ -1,10 +1,7 @@
-from math import pi
+R = 8.3144
+V = int(input("Введите объем газа в литрах - "))
+T = int(input('Введите абсолютную температуру газа - '))
+n = int(input('Введите длину стороны квадрата - '))
 
-print('Hello, my name is - Blacklight')
-# Однострочный комментарий.
-"""
-Многострочный. 
-"""
-print(2/3)
-print(200//30)
-print(pi)
+P = n * R * T / V
+print(P)
