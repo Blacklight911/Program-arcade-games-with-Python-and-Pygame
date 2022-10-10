@@ -9,7 +9,7 @@ desert trek and out run the natives.
 print('Welcome to Camel!')
 print('You have stolen a camel to make your way across the great Mobi desert.')
 print('The natives want their camel back and are chasing you down! Survive your')
-print('desert trek and out run the natives.')
+print('desert trek and out run the natives.\n')
 
 done = False
 
@@ -26,25 +26,27 @@ while not done:
     print('C. Ahead full speed.')
     print('D. Stop for the night.')
     print('E. Status check.')
-    print('Q. Quit.')
+    print('Q. Quit.\n')
 
     user_choice = input('Make your choice ! ')
-    oasis = random.randrange(1, 21)
 
     if user_choice.lower() == 'q':
         done = True
     elif user_choice.lower() == 'e':
         print('Miles traveled: ', miles)
         print('Drinks in canteen: ', number_of_drinks_in_canteen)
-        print('The natives are', natives_have_traveled, 'miles behind you')
+        print('The natives are', natives_have_traveled, 'miles behind you \n')
     elif user_choice.lower() == 'd':
         print('You choice stay for the night')
         print('Camel is happy')
+        camel_tiredness = 0
         natives_have_traveled += random.randrange(7, 15)
     elif user_choice.lower() == 'c':
+        print()
         print('Full speed!!! Go go turbo camel')
         miles += random.randrange(10, 21)
         print('Miles traveled: ', miles)
+        print()
         thirst += 1
         camel_tiredness += random.randrange(1, 4)
         natives_have_traveled = random.randrange(7, 15)
@@ -81,14 +83,16 @@ while not done:
         print('Game Over')
         done = True
     if natives_have_traveled >= miles:
+        done = True
         print('Natives catch you!\n')
         print('Game over')
-    elif natives_have_traveled > 15 > miles:
+    if (miles - natives_have_traveled) > 15 and user_choice.lower() != 'e' and done is False:
         print('Natives less than 15 miles behind')
         print('Natives getting close!\n')
     if done is False and miles >= 200:
         print('You won! You across the desert \n')
-    if done is False and random.random() < 0.2:
+        done = True
+    if done is False and random.random() < 0.2 and user_choice.lower() != 'e':
         print('You find Oasis! Your thirst and camel tiredness restored, also yor canteen refile \n')
         thirst = 0
         camel_tiredness = 0
