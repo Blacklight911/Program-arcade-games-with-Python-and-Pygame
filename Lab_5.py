@@ -15,7 +15,11 @@ clock = pygame.time.Clock()
 
 width_for_draw_line = 0
 
-font = pygame.font.Font('C:/WINDOWS/Fonts/BERNHC.TTF', 25)
+font = pygame.font.Font('C:/WINDOWS/Fonts/VINERITC.TTF', 70)
+
+image = pygame.image.load('C:/Users/dimon/Desktop/the_car.png')
+image = pygame.transform.scale(image, [324, 180])
+image = pygame.transform.rotate(image, -3)
 
 # --------------------- Main Loop -----------------------
 while not done:
@@ -25,8 +29,8 @@ while not done:
 
     screen.fill(0x3d047a)
 
-    text_1 = font.render('Neon', True, 0x2926a1, 0x504cd2)
-    text_2 = font.render('Driver', True, 0x1b1889, 0xd3d3e7)
+    text_1 = font.render('Neon', True, 0x0514d8)
+    text_2 = font.render('Drive', True, 0xd31e64)
 
     screen.blit(text_1, [50, 30])
     screen.blit(text_2, [50, 90])
@@ -46,6 +50,7 @@ while not done:
     for y in range(0, 30, 10):
         pygame.draw.polygon(screen, 0xa806cf, [[500, 100 - y], [350 - y, 380 + y], [650 + y, 380 + y]],
                             width_for_draw_polygon)
+    screen.blit(image, [315, 220])
 
     # Update the full display Surface to the screen
     pygame.display.flip()
