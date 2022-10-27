@@ -29,7 +29,7 @@ clock = pygame.time.Clock()
 circle_x = 0
 circle_y = 100
 circle_change_x = 0
-rect_change_y = 600
+rect_change_y = 500
 rect_sky_color = 0x1984e2
 
 
@@ -55,6 +55,10 @@ while not done:
     if circle_change_x > 350:
         rect_sky_color = 0xcc6516
 
+    if rect_change_y != 0:
+        rect_change_y += -1
+    else:
+        rect_change_y = 0
     # --- Screen-clearing code goes here
 
     # Here, we clear the screen to white. Don't put other drawing commands
@@ -80,26 +84,20 @@ while not done:
     for y in range(220, 700, 30):
         pygame.draw.line(screen, 0xc1de1b, [450, y], [450, y + 20], 7)
 
-
-
     # Car
-    pygame.draw.rect(screen, 0x0a0966, [490, 300, 78, 60], 0)
-    # pygame.draw.rect(screen, 0x95cbfa, [495, 325, 60, 20])
-    pygame.draw.rect(screen, 0xc1de1b, [500, 350, 69, 20])
-    pygame.draw.line(screen, 0xc1de1b, [495, 350], [495, 450], 3)
-    pygame.draw.line(screen, 0xc1de1b, [565, 350], [565, 450], 3)
-    pygame.draw.rect(screen, 0x2b3136, [490, 350, 79, 100], 0)
-    pygame.draw.rect(screen, 0x97bdde, [495, 330, 69, 20])
-    pygame.draw.rect(screen, 0x7c0092, [495, 330, 70, 20], 2)
-    pygame.draw.line(screen, red, [500, 450], [500, 450], 5)
-    pygame.draw.line(screen, red, [560, 450], [560, 450], 5)
-
-
+    pygame.draw.rect(screen, 0x0a0966, [490, 300 + rect_change_y, 78, 60], 0)
+    pygame.draw.rect(screen, 0xc1de1b, [500, 350 + rect_change_y, 69, 20])
+    pygame.draw.line(screen, 0xc1de1b, [495, 350 + rect_change_y], [495, 450 + rect_change_y], 3)
+    pygame.draw.line(screen, 0xc1de1b, [565, 350 + rect_change_y], [565, 450 + rect_change_y], 3)
+    pygame.draw.rect(screen, 0x2b3136, [490, 350 + rect_change_y, 79, 100], 0)
+    pygame.draw.rect(screen, 0x97bdde, [495, 330 + rect_change_y, 69, 20])
+    pygame.draw.rect(screen, 0x7c0092, [495, 330 + rect_change_y, 70, 20], 2)
+    pygame.draw.line(screen, red, [500, 450 + rect_change_y], [500, 450 + rect_change_y], 5)
+    pygame.draw.line(screen, red, [560, 450 + rect_change_y], [560, 450 + rect_change_y], 5)
+    pygame.draw.rect(screen, 0xd8de1f, [490, 350 + rect_change_y, 79, 95], 2)
 
     # Дом или событие на траве
-    # Машина на дороге
-    # rect_change_y += -1
-    # circle_change_x += 2
+    circle_change_x += 2
 
     # --- Drawing code should go here
 
