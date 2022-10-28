@@ -31,6 +31,8 @@ circle_y = 100
 circle_change_x = 0
 rect_change_y = 500
 rect_sky_color = 0x1984e2
+move_man_x = 0
+move_man_y = 0
 
 
 # -------- Main Program Loop -----------
@@ -59,6 +61,9 @@ while not done:
         rect_change_y += -1
     else:
         rect_change_y = 0
+
+    # if move_man_x
+
     # --- Screen-clearing code goes here
 
     # Here, we clear the screen to white. Don't put other drawing commands
@@ -96,7 +101,47 @@ while not done:
     pygame.draw.line(screen, red, [560, 450 + rect_change_y], [560, 450 + rect_change_y], 5)
     pygame.draw.rect(screen, 0xd8de1f, [490, 350 + rect_change_y, 79, 95], 2)
 
-    # Дом или событие на траве
+    # House
+    pygame.draw.rect(screen, 0x603909, [50, 400, 120, 80], 5)
+    pygame.draw.rect(screen, 0x041059, [55, 320, 110, 155])
+    pygame.draw.rect(screen, 0x603909, [50, 300, 120, 80])
+    pygame.draw.rect(screen, 0x97bdde, [85, 400, 50, 50])
+
+    # Man_1
+    if rect_change_y == 0:
+        pygame.draw.line(screen, 0xb000f2, [480 + move_man_x, 300 + move_man_y], [480 + move_man_x, 360 + move_man_y], 5)
+        for x in range(470, 501, 20):
+            for y in range(320, 381, 40):
+                pygame.draw.line(screen, 0xb000f2, [x + move_man_x, y + move_man_y], [x + move_man_x, y + 20 + move_man_y], 4)
+        for y in range(320, 361, 40):
+            pygame.draw.line(screen, 0xb000f2, [470 + 20 + move_man_x, y + move_man_y], [470 + move_man_x, y + move_man_y], 4)
+        pygame.draw.circle(screen, 0xb000f2, [480 + move_man_x, 300 + move_man_y], 15, 0)
+        pygame.draw.line(screen, white, [478 + move_man_x, 307 + move_man_y], [484 + move_man_x, 307 + move_man_y], 2)
+        pygame.draw.line(screen, white, [475 + move_man_x, 296 + move_man_y], [485 + move_man_x, 296 + move_man_y], 1)
+        pygame.draw.circle(screen, white, [475 + move_man_x, 297 + move_man_y], 3, 2)
+        pygame.draw.circle(screen, white, [485 + move_man_x, 297 + move_man_y], 3, 2)
+        pygame.draw.rect(screen, 0x524f53, [470 + move_man_x, 280 + move_man_y, 20, 10])
+
+
+
+
+
+
+
+    # Man_2
+    pygame.draw.line(screen, black, [240, 400], [240, 460], 5)
+    for x in range(230, 251, 20):
+        for y in range(420, 481, 40):
+            pygame.draw.line(screen, black, [x, y], [x, y + 20], 4)
+    for y in range(420, 481, 40):
+        pygame.draw.line(screen, black, [230 + 20, y], [230, y], 4)
+    pygame.draw.circle(screen, black, [240, 400], 15, 0)
+    pygame.draw.line(screen, white, [240, 405], [244, 410], 2)
+    pygame.draw.line(screen, white, [235, 396], [245, 396], 1)
+    pygame.draw.circle(screen, white, [235, 397], 3, 2)
+    pygame.draw.circle(screen, white, [245, 397], 3, 2)
+    pygame.draw.rect(screen, 0x524f53, [230, 380, 20, 10])
+
     circle_change_x += 2
 
     # --- Drawing code should go here
