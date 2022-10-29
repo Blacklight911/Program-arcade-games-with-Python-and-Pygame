@@ -1,22 +1,35 @@
-def min3(a, b, c):
-    if b > a < c:
-        return a
-    elif a > b < c:
-        return b
-    elif a > c < b:
-        return c
-    elif a == b < c:
-        return a
-    elif a == c < b:
-        return a
-    elif b == c < a:
-        return b
-    else:
-        return a
+# def min3(a, b, c):
+#     if b > a < c:
+#         return a
+#     elif a > b < c:
+#         return b
+#     elif a > c < b:
+#         return c
+#     elif a == b < c:
+#         return a
+#     elif a == c < b:
+#         return a
+#     elif b == c < a:
+#         return b
+#     else:
+#         return a
+#
+#
+# print(min3(4, 7, 5))
+# print(min3(4, 5, 5))
+# print(min3(4, 4, 4))
+# print(min3(-2, -6, -100))
+# print(min3("Z", "B", "A"))
+
+def box(h, w):
+    for i in range(h):
+        for j in range(w):
+            print('*', end='')
+        print()
 
 
-print(min3(4, 7, 5))
-print(min3(4, 5, 5))
-print(min3(4, 4, 4))
-print(min3(-2, -6, -100))
-print(min3("Z", "B", "A"))
+box(7, 5)
+print()
+box(3, 2)
+print()
+box(3, 10)
