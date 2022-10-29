@@ -5,10 +5,14 @@ def min3(a, b, c):
         return b
     elif a > c < b:
         return c
-    elif a == b or a == c or c == b:
-        return
-
-min()
+    elif a == b < c:
+        return a
+    elif a == c < b:
+        return a
+    elif b == c < a:
+        return b
+    else:
+        return a
 
 
 print(min3(4, 7, 5))
