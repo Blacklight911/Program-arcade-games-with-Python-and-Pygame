@@ -122,12 +122,6 @@ while not done:
         pygame.draw.circle(screen, white, [485 + move_man_x, 297 + move_man_y], 3, 2)
         pygame.draw.rect(screen, 0x524f53, [470 + move_man_x, 280 + move_man_y, 20, 10])
 
-
-
-
-
-
-
     # Man_2
     pygame.draw.line(screen, black, [240, 400], [240, 460], 5)
     for x in range(230, 251, 20):
