@@ -8,6 +8,12 @@ red = (255, 0, 0)
 
 pygame.init()
 
+# Load Image
+background_image = pygame.image.load('star.bmp')
+
+# Load Sound
+background_sound = pygame.mixer.Sound('interstellar_02.-Cornfield-Chase.ogg')
+
 # Set the width and height of the screen [width, height]
 size = (700, 500)
 screen = pygame.display.set_mode(size)
@@ -73,6 +79,8 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            background_sound.play()
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
@@ -113,6 +121,7 @@ while not done:
     # background image.
     screen.fill(white)
 
+    screen.blit(background_image, [0, 0])
     telephone(screen, keyboard_x, keyboard_y, text)
     man(screen, mouse_x, mouse_y)
     # --- Drawing code should go here
