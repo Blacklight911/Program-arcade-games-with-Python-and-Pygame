@@ -1,15 +1,20 @@
-print (3==1+2)
-x=5
-print (x==5)
-print (3<4)
-print (4<4)
-print ("Hi" == "Hi")
-print ("hi" == "Hi")
-print ("a" < "b")
-t=5==5
-print (t)
-done=False
-if done:
-    print ("I am done.")
-else:
-    print ("I am not done.")
+class MyClass:
+    name = ''
+
+
+class YourClass:
+    name = ''
+
+
+black = MyClass()
+white = black
+print(id(black))
+print(id(white))
+
+
+my_list = [1, 2, 3]
+your_list = my_list
+my_list.append(5)
+
+print(my_list, id(my_list))
+print(your_list, id(your_list))

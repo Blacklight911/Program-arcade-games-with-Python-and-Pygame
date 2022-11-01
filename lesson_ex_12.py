@@ -68,18 +68,35 @@ myDog.weight = 20
 myDog.age = 3
 
 
-class Person:
-    name = ""
-    money = 0
+class Cat:
+    name = ''
+    color = ''
+    weight = 0
+
+    def meow(self):
+        print(self.name, 'says Meow')
 
 
-bob = Person()
-bob.name = "Bob"
-bob.money = 100
-
-nancy = bob
-nancy.name = "Nancy"
-print(bob.name, "has", bob.money, "dollars.")
-print(nancy.name, "has", nancy.money, "dollars.")
+barsik = Cat()
+barsik.name = 'Barsik'
+barsik.color = 'black'
+barsik.weight = 4
+barsik.meow()
 
 
+class Monster:
+    name = ''
+    health = 0.0
+
+    def decrease_health(self, ammount):
+        self.health -= ammount
+        if self.health <= 0:
+            print(self.name, 'killed')
+
+
+kaka_demon = Monster()
+kaka_demon.name = 'Kaka Demon'
+kaka_demon.health = 20
+
+kaka_demon.decrease_health(15)
+kaka_demon.decrease_health(5)
