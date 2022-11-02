@@ -34,9 +34,9 @@ class Bird:
 
 
 myBird = Bird()
-myBird.color = "green"
-myBird.name = "Sunny"
-myBird.breed = "Sun Conure"
+myBird.color = 'green'
+myBird.name = 'Sunny'
+myBird.breed = 'Sun Conure'
 
 
 class MyPersonFor2DGame:
@@ -88,8 +88,8 @@ class Monster:
     name = ''
     health = 0.0
 
-    def decrease_health(self, ammount):
-        self.health -= ammount
+    def decrease_health(self, amount):
+        self.health -= amount
         if self.health <= 0:
             print(self.name, 'killed')
 
@@ -100,3 +100,75 @@ kaka_demon.health = 20
 
 kaka_demon.decrease_health(15)
 kaka_demon.decrease_health(5)
+
+
+class Star:
+    def __init__(self):
+        print('A star is born')
+
+
+star = Star()
+
+
+class Monster():
+    name = ''
+    health = 0
+
+    def __init__(self, new_name, health_points):
+        self.name = new_name
+        self.health = health_points
+
+
+kaka_demon = Monster('Kaka Demon', 100)
+print(kaka_demon.name, kaka_demon.health)
+
+
+class Animal:
+    animal_name = ''
+
+    def __init__(self):
+        print('Animal was created')
+
+    def eat(self):
+        print(self.animal_name, 'eating Om-Nom-nom')
+
+    def make_noise(self):
+        print(self.animal_name, 'says Grrr')
+
+
+class Cat(Animal):
+    def __init__(self):
+        Animal.__init__(self)
+        print('Cat was born')
+
+    def make_noise(self):
+        print(self.animal_name, ' says Meow')
+
+
+class Dog(Animal):
+    def init(self):
+        Animal.__init__(self)
+        print('Dog was born')
+
+    def make_noise(self):
+        print(self.animal_name, 'says Woof')
+
+
+darial = Cat()
+dozor = Dog()
+jack = Dog()
+some_animal = Animal()
+
+darial.animal_name = 'Darial'
+dozor.animal_name = 'Dozor'
+jack.animal_name = 'Jack'
+some_animal.animal_name = 'Bark'
+
+darial.eat()
+darial.make_noise()
+dozor.eat()
+dozor.make_noise()
+jack.eat()
+jack.make_noise()
+some_animal.eat()
+some_animal.make_noise()
