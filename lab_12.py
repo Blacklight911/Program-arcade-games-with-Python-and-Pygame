@@ -15,14 +15,6 @@ RED = (255, 0, 0)
 # Classes
 class Rectangle:
     """This Clas creating Rectangle on the screen"""
-    x = 0
-    y = 0
-    x_change = 0
-    y_change = 0
-    width = 0
-    height = 0
-    color = [0, 0, 0]
-
     def __init__(self):
         """Initializing random module and set it to x and y"""
         self.x = random.randint(0, 700)
