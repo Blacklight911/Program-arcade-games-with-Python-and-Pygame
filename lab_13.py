@@ -5,7 +5,7 @@ import pygame
 import random
 
 # Define some colors
-BLACK = ( 0, 0, 0)
+BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
@@ -132,6 +132,8 @@ done = False
 clock = pygame.time.Clock()
 
 score = 0
+font = pygame.font.Font(None, 20)
+
 
 # -------- Main Program Loop -----------
 
@@ -166,22 +168,21 @@ while not done:
 	# Clear the screen
 	screen.fill(WHITE)
 
-	# Fetch the x and y out of the list,
-	# just like we'd fetch letters out of a string.
+	# Blit score on screen
+	text = font.render('Score: ' + str(score), True, BLACK)
+	screen.blit(text, [10, 350])
 
 	all_sprites_list.update()
 	# See if the player block has collided 	with anything.
-
 	blocks_hit_list = pygame.sprite.spritecollide(player, good_block_list, True)
 	blocks_hit_list_red = pygame.sprite.spritecollide(player, bad_block_list, True)
+
 	# Check the list of collisions.
 	for block in blocks_hit_list:
 		score += 1
-		print(score)
 
 	for block in blocks_hit_list_red:
 		score -= 1
-		print(score)
 	# Draw all the spites
 	all_sprites_list.draw(screen)
 
