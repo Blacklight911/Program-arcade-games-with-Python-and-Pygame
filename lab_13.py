@@ -64,15 +64,15 @@ class Block(pygame.sprite.Sprite):
 
 		# Create an image of the block, and fill it with a color.
 		# This could also be an image loaded from the disk.
+		self.image = pygame.Surface([width, height])
+
+		# Create an image of the block, and fill it with a color.
+		# This could also be an image loaded from the disk.
 		self.image = pygame.image.load(filename).convert()
 
 		# Set background color to be transparent. Adjust to WHITE if your
 		# background is WHITE.
 		self.image.set_colorkey(BLACK)
-
-		# Create an image of the block, and fill it with a color.
-		# This could also be an image loaded from the disk.
-		self.image = pygame.Surface([width, height])
 
 		# Fetch the rectangle object that has the dimensions of the image
 		# Update the position of this object by setting the values of rect.x and rect.y
