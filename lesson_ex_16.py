@@ -10,9 +10,9 @@ RED = (255, 0, 0)
 grid = []
 
 for row in range(10):
- grid.append([])
- for column in range(10):
- 	grid[row].append(0)
+    grid.append([])
+    for column in range(10):
+        grid[row].append(0)
  
 pygame.init()
  
@@ -38,11 +38,11 @@ while not done:
         if event.type == pygame.QUIT:
             done = True
         elif event.type == pygame.MOUSEBUTTONDOWN:
-        	pos = pygame.mouse.get_pos()
-        	column = pos[0] // (width + margin)
-        	row = pos[1] // (height + margin)
-        	grid[row][column] = 1
-        	print('Click', pos, 'Grid coordinates', row, column)
+            pos = pygame.mouse.get_pos()
+            column = pos[0] // (width + margin)
+            row = pos[1] // (height + margin)
+            grid[row][column] = 1
+            print('Click', pos, 'Grid coordinates', row, column)
     # --- Screen-clearing code goes here
  
     # Here, we clear the screen to white. Don't put other drawing commands
@@ -54,11 +54,11 @@ while not done:
  
     # --- Drawing code should go here
     for row in range(10):
-    	for column in range(10):
-    		color = WHITE
-    		if grid[row][column] == 1:
-    			color = GREEN
-    		pygame.draw.rect(screen, color, [(margin + width) * column + margin, (margin + height) * row + margin, width, height])
+        for column in range(10):
+            color = WHITE
+            if grid[row][column] == 1:
+                color = GREEN
+            pygame.draw.rect(screen, color, [(margin + width) * column + margin, (margin + height) * row + margin, width, height])
     # --- Go ahead and update the screen with what we've drawn.
     pygame.display.flip()
     
