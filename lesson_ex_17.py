@@ -53,5 +53,30 @@ def average(a, b, c):
 
 print(average(5, 3, 7))
 
-class Ball():
-    pass
+
+class Ball:
+    pos_x = 0
+    pos_y = 0
+    change_x = 2
+    change_y = 2
+
+    def update(self):
+        self.change_x += self.pos_x
+        self.change_y += self.pos_y
+
+
+my_ball = Ball()
+for i in range(10):
+    my_ball.update()
+
+my_list = [55, 41, 52, 68, 45, 27, 40, 25, 37, 26]
+
+temp = my_list[-3]
+my_list[-3] = my_list[-4]
+my_list[-4] = temp
+
+my_list = [27, 32, 18, 2, 11, 57, 14, 38, 19, 91]
+
+temp = my_list[0]
+my_list[0] = my_list[3]
+my_list[3] = temp
