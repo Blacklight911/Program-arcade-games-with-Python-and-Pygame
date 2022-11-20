@@ -47,7 +47,7 @@ def f_2(n):
     elif n == 2:
         return 1
     elif n > 2:
-        return f(n - 1) + f(n - 2)
+        return f_2(n - 1) + f_2(n - 2)
 
 
 for n in range(1, 11):
